@@ -1,0 +1,16 @@
+{
+    "contents" : "\n# Simple application that estimates your Body Mass Index based on inputs\n# of the individual's body mass (in kilograms) and height (in meters)\n\nlibrary(shiny)\n\nshinyUI(\n    \n    pageWithSidebar(\n  \n      # Application title\n      headerPanel(\"Body Mass Index Estimate\"),\n      \n      # Sidebar with numeric inputs for body mass and height\n      sidebarPanel(\n        numericInput('bodyMass', 'Body Mass (kilograms)', 100, min = 10, max = 250, step = 5),\n        numericInput('height', 'Height (meters)', 1, min = 0.1, max = 2.5, step = 0.05),\n        submitButton('Submit')\n      ),\n      \n      # Main panel with estimated Body Mass Index\n      mainPanel(\n        h3('Body Mass Index Estimate'),\n        h4('You entered body mass value of '),\n        verbatimTextOutput(\"bodyMassInput\"),\n        h4('And height value of '),\n        verbatimTextOutput(\"heightInput\"),\n        h4('Which resulted in a BMI estimate of '),\n        verbatimTextOutput(\"bmiEstimate\")\n          \n      )  \n    )\n)\n",
+    "created" : 1414034285956.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1808040222",
+    "id" : "B62BBF93",
+    "lastKnownWriteTime" : 1414039351,
+    "path" : "~/Developer/Coursera/BodyMassIndex/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -1,0 +1,16 @@
+{
+    "contents" : "# Server logic for simple application that estimates your Body Mass Index based\n# on inputs of the individual's body mass (in kilograms) and height (in meters)\n\nlibrary(shiny)\n\nbmi <- function(bodyMass, height) round(bodyMass/(height^2), 2)\nclassification <- function(bodyMass, height) {\n    if (bodyMass/(height^2) < 18.5 ) {\n        classification <- \"(Underweight)\"\n    }\n    else if (bodyMass/(height^2) <= 25) {\n        classification <- \"(Normal)\"\n    }\n    else if (bodyMass/(height^2) <= 30) {\n        classification <- \"(Overweight)\"\n    }\n    else {\n        classification <- \"(Obese)\"\n    }\n}\n\nshinyServer(\n    function(input, output) {\n        output$bodyMassInput <- renderPrint({input$bodyMass})\n        output$heightInput <- renderPrint({input$height})\n        output$bmiEstimate <- renderPrint(paste({bmi(input$bodyMass, input$height)}, {classification(input$bodyMass, input$height)}))\n    \n}\n)\n",
+    "created" : 1414034286270.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1171038740",
+    "id" : "B0977A6A",
+    "lastKnownWriteTime" : 1414039663,
+    "path" : "~/Developer/Coursera/BodyMassIndex/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
