@@ -13,6 +13,7 @@ shinyUI(
       
       # Sidebar with numeric inputs for body mass and height
       sidebarPanel(
+        h4("Estimate Body Mass Index by entering body mass (in kilograms) and height (in meters) values below:"),
         numericInput('bodyMass', 'Body Mass (kilograms)', 100, min = 10, max = 250, step = 5),
         numericInput('height', 'Height (meters)', 1, min = 0.1, max = 2.5, step = 0.05),
         submitButton('Submit')
